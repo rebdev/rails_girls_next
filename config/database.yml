@@ -1,16 +1,16 @@
 ---
 sqlite: &sqlite
   host: 127.0.0.1
-  adaptor: sqlite3
-  
+  adapter: sqlite3
+
 development:
-  <<: &sqlite
+  <<: *sqlite
   database: db/development.sqlite3
 
 production:
-  <<: &sqlite
+  <<: *sqlite
   database: db/production.sqlite3
-  
+
 test:
-  <<: %sqlite
+  <<: *sqlite
   database: db/test.sqlite3
